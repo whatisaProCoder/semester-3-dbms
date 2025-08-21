@@ -62,3 +62,11 @@ insert into INVOICE (INV_NO, MV_NO, CUST_ID, ISSUE_DATE, RETURN_DATE) values
 ('i09', '5',  'a03', '1993-07-06', '1993-07-07'),
 ('i10', '8',  'a06', '1993-09-03', '1993-09-06');
 
+select * from CUST;
+
+select * from MOVIE where TYPE = "comedy";
+
+select * from MOVIE where PRICE > 150.00;
+
+select INV_NO, RETURN_DATE from INVOICE where RETURN_DATE < "1993-08-10";
+
