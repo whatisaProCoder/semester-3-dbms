@@ -7,15 +7,15 @@ set sql_safe_updates = 0;
 create table CUST (
 CUST_ID varchar(3) primary key,
 LNAME varchar(15),
-FNAME varchar(15) not null,
+FNAME varchar(15),
 AREA varchar(2),
 PHONE_NO int
 );
 
 create table MOVIE (
 MV_NO varchar(2) primary key,
-TITLE varchar(25) not null,
-TYPE varchar(10) not null,
+TITLE varchar(25),
+TYPE varchar(10),
 STAR varchar(25)
 );
 
@@ -24,10 +24,22 @@ INV_NO varchar(3) primary key,
 MV_NO varchar(2),
 CUST_ID varchar(3),
 ISSUE_DATE date,
-RETURN_DATE date,
-foreign key (CUST_ID) references CUST(CUST_ID),
-foreign key (MV_NO) references MOVIE(MV_NO)
+RETURN_DATE date
 );
+
+alter table INVOICE
+add constraint f_invoice_cust
+foreign key (CUST_ID) references CUST(CUST_ID);
+
+alter table INVOICE
+add constraint f_invoice_movie
+foreign key (MV_NO) references MOVIE(MV_NO);
+
+alter table CUST modify FNAME varchar(25) not null;
+
+alter table MOVIE modify TITLE varchar(25) not null;
+
+alter table MOVIE modify TYPE varchar(10) not null;
 
 alter table MOVIE add PRICE decimal(8, 2);
 
