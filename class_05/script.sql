@@ -16,7 +16,13 @@ select * from CUST where AREA = "da" or AREA = "mu" or AREA = "gh";
 
 select * from CUST where PHONE_NO > 5550000;
 
-select distinct C.* from CUST C 
-join invoice i on C.CUST_ID = I.CUST_ID
+select distinct C.* from CUST C join INVOICE I 
+on C.CUST_ID = I.CUST_ID 
 where MONTH(I.ISSUE_DATE) = 9;
+
+select I.* from CUST C join INVOICE I 
+on C.CUST_ID = I.CUST_ID 
+where C.CUST_ID = "a01" or C.CUST_ID = "a02"; 
+
+select * from MOVIE where TYPE = "action" or TYPE = "comedy";
 
