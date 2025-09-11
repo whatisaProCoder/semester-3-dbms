@@ -12,7 +12,7 @@ select LNAME from CUST where LNAME like "s%" or LNAME like "j%";
 
 select * from CUST where AREA like "_a";
 
-select * from CUST where AREA = "da" or AREA = "mu" or AREA = "gh";
+select * from CUST where AREA IN ("da", "mu", "gh");
 
 select * from CUST where PHONE_NO > 5550000;
 
