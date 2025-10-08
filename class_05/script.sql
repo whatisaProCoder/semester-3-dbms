@@ -24,5 +24,5 @@ select I.* from CUST C join INVOICE I
 on C.CUST_ID = I.CUST_ID 
 where C.CUST_ID = "a01" or C.CUST_ID = "a02"; 
 
-select * from MOVIE where TYPE = "action" or TYPE = "comedy";
+select TITLE from MOVIE where TYPE = "action" or TYPE = "comedy";
 
