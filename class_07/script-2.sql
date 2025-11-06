@@ -24,7 +24,7 @@ select curdate();
 select now();
 
 -- Find the date, 15 days after the current date.
-SELECT date_add(curdate(), interval 15 day) as date_after_15_days;
+select date_add(curdate(), interval 15 day) as date_after_15_days;
 
 -- Find the number of days elapsed between the current date and the return date of the 
 -- movie for all customers.
